@@ -1,0 +1,36 @@
+# ---- UI ----
+streamlit>=1.38.0
+
+# ---- Audio acquisition & processing ----
+yt-dlp>=2024.8.6            # download audio from YouTube URLs
+pydub>=0.25.1                # audio format conversion/chunking
+ffmpeg-python>=0.2.0         # wrapper for ffmpeg (used by pydub/whisper pipeline)
+
+# ---- Transcription (Groq-hosted Whisper) ----
+groq>=0.11.0                 # Groq API client (Whisper large-v3 endpoint)
+
+# ---- Translation (Hindi -> English, if not handled by Whisper directly) ----
+deep-translator>=1.11.4      # simple wrapper for translation APIs (optional fallback)
+
+# ---- LLM orchestration (LangChain LCEL + Mistral) ----
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-mistralai>=0.2.0   # Mistral chat model integration for LangChain
+
+# ---- RAG / Vector store (Qdrant) ----
+qdrant-client>=1.11.0
+langchain-qdrant>=0.2.0      # LangChain <-> Qdrant vectorstore integration
+
+# ---- Embeddings for RAG ----
+sentence-transformers>=3.0.1 # local embeddings (avoids extra API cost); swap for
+                              # langchain-mistralai embeddings if you prefer API-based
+
+# ---- Export (PDF / TXT) ----
+fpdf2>=2.7.9                 # lightweight PDF generation
+
+# ---- Utilities ----
+python-dotenv>=1.0.1         # load API keys from .env
+tiktoken>=0.7.0               # token counting for chunking/summarization
+requests>=2.32.3
+tenacity>=8.5.0               # retry logic for API calls

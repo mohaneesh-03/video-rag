@@ -1,0 +1,42 @@
+# Environment variables & API keys
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Downloaded media & chunks
+downloads/
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.webm
+*.ogg
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+
+# Vector DB & local storage
+*.sqlite3
+*.db
+qdrant_storage/
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
