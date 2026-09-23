@@ -20,7 +20,7 @@ client = None
 def get_client() -> QdrantClient:
     global client
     if client is None:
-        client = QdrantClient(url=url, api_key=api_key)
+        client = QdrantClient(url=url, api_key=api_key, check_compatibility=False)
     return client
 
 def create_collection():
@@ -76,16 +76,27 @@ def upload_vectors(transcript: str):
     print(f"Uploaded {len(points)} vectors to {COLLECTION_NAME}")
 
 
-def search(query:str, top_k: int = 3):
+def search(query: str, top_k: int = 3):
     client = get_client()
-    model = SentenceTransformer("all-MiniLM-L6-V2")
+    try:
+        if not client.collection_exists(COLLECTION_NAME):
+            print(f"Warning: Collection '{COLLECTION_NAME}' does not exist yet. Please index transcript first.")
+            return []
+    except Exception as e:
+        print(f"Warning: Could not connect to Qdrant collection: {e}")
+        return []
+
+    model = SentenceTransformer("all-MiniLM-L6-v2")
     query_vector = model.encode(query).tolist()
 
-    result = client.query_points(
-        collection_name = COLLECTION_NAME,
-        query=query_vector,
-        limit = top_k,
-        with_payload=True
-    ).points
-
-    return result
+    try:
+        result = client.query_points(
+            collection_name=COLLECTION_NAME,
+            query=query_vector,
+            limit=top_k,
+            with_payload=True,
+        ).points
+        return result
+    except Exception as e:
+        print(f"Vector search failed: {e}")
+        return []
