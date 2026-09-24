@@ -1,0 +1,44 @@
+[
+  {
+    "id": "q1",
+    "question": "How did Doctor Doom's mother lose her soul?",
+    "target_point_id": 3,
+    "target_keyword": "Mephisto",
+    "ground_truth_claim": "Doctor Doom's mother Cynthia Von Doom got her powers from Mephisto and had to hand over her soul to him."
+  },
+  {
+    "id": "q2",
+    "question": "What unique combination makes Doctor Doom so powerful in Marvel comics?",
+    "target_point_id": 4,
+    "target_keyword": "science",
+    "ground_truth_claim": "Doctor Doom incorporated magic with science, making him uniquely powerful in Marvel comics."
+  },
+  {
+    "id": "q3",
+    "question": "Why does Reed Richards fail to master or understand magic?",
+    "target_point_id": 5,
+    "target_keyword": "Reed",
+    "ground_truth_claim": "Reed Richards tries to incorporate magic with logic or science, which prevents him from figuring out magic."
+  },
+  {
+    "id": "q4",
+    "question": "How did Doctor Doom learn his powerful magic in the comic books?",
+    "target_point_id": 9,
+    "target_keyword": "Batman",
+    "ground_truth_claim": "Like Batman, Doctor Doom trained with many big villains and gurus across the world."
+  },
+  {
+    "id": "q5",
+    "question": "What reference from WandaVision and Agatha is mentioned regarding casting magic?",
+    "target_point_id": 10,
+    "target_keyword": "runes",
+    "ground_truth_claim": "Agatha mentions that if a magician casts their runes in a space, only that magician can perform magic there."
+  },
+  {
+    "id": "q6",
+    "question": "How powerful was Victor Von Doom shown to be with Thor's hammer?",
+    "target_point_id": 2,
+    "target_keyword": "hammer",
+    "ground_truth_claim": "Victor Von Doom became so powerful that he could flick Thor's hammer."
+  }
+]

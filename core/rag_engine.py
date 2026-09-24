@@ -74,8 +74,9 @@ class ConversationalRAG:
     Stateful Conversational RAG Engine for Video Transcripts.
     """
 
-    def __init__(self, top_k: int = 3):
+    def __init__(self, top_k: int = 3, collection_name: str = "video_rag"):
         self.top_k = top_k
+        self.collection_name = collection_name
         self.llm = get_llm()
         self.rephrase_chain = get_rephrase_chain(self.llm)
         self.answer_chain = get_answer_chain(self.llm)
@@ -96,12 +97,12 @@ class ConversationalRAG:
         else:
             standalone_query = question
 
-        # Step 2: Vector retrieval from Qdrant
-        results = search(standalone_query, top_k=self.top_k)
+        # Step 2: Vector retrieval from Qdrant (with sentence-window context expansion)
+        results = search(standalone_query, top_k=self.top_k, collection_name=self.collection_name)
         chunks = [
-            result.payload.get("text", "")
+            result.payload.get("context", result.payload.get("text", ""))
             for result in results
-            if result.payload and "text" in result.payload
+            if result.payload and ("context" in result.payload or "text" in result.payload)
         ]
         context = "\n\n---\n\n".join(chunks)
 

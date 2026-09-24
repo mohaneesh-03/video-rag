@@ -12,7 +12,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 from utils.audio_processor import process_input
 from core.transcriber import transcribe_all
-from core.extractor import analyze_transcript
+from core.extractor import analyze_transcript, analyze_transcript_from_index
 from core.vector_store import upload_vectors
 from core.rag_engine import ConversationalRAG
 
@@ -228,20 +228,20 @@ if analyze_button and video_url.strip():
         transcription = transcribe_all(chunks, translate=True)
         progress_status.write("✓ Transcription complete.")
 
-        # Step 3: Consolidated Analysis (Title, Summary, Actions, Decisions, Questions in 1 pass)
-        progress_status.write("📋 Extracting title, summary, action items & decisions (single pass)...")
-        analysis = analyze_transcript(transcription)
+        # Step 3: Index Vectors First in Qdrant (Sentence-Window Context Expansion)
+        progress_status.write("🚀 Indexing full transcript into Qdrant Vector Store (sentence-window chunking)...")
+        upload_vectors(transcription)
+        progress_status.write("✓ Vectors indexed with sentence-window expansion.")
+
+        # Step 4: RAG-Driven Extraction (Bypasses 8k Context Ceiling)
+        progress_status.write("📋 Extracting title, summary, action items & decisions (RAG-driven evidence synthesis)...")
+        analysis = analyze_transcript_from_index(fallback_transcript=transcription)
         title = analysis["title"]
         summary = analysis["summary"]
         action_items = analysis["action_items"]
         decisions = analysis["key_decisions"]
         questions = analysis["open_questions"]
-        progress_status.write("✓ Analysis and insights generated.")
-
-        # Step 5: Index Vectors in Qdrant
-        progress_status.write("🚀 Indexing transcript into Qdrant Vector Store...")
-        upload_vectors(transcription)
-        progress_status.write("✓ Vectors indexed successfully.")
+        progress_status.write("✓ Length-agnostic analysis and insights generated.")
 
         # Save to session state
         st.session_state.result = {
