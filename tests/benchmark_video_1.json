@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1",
+    "question": "In which U.S. state is the random town described in the excerpt located?",
+    "target_keyword": "California",
+    "ground_truth_claim": "California"
+  },
+  {
+    "id": "q2",
+    "question": "Which community does the person recommend for staying in the area?",
+    "target_keyword": "Slab City",
+    "ground_truth_claim": "Slab City"
+  },
+  {
+    "id": "q3",
+    "question": "Which branch of the U.S. military originally built the settlement in 1942?",
+    "target_keyword": "Marine Corps",
+    "ground_truth_claim": "Marine Corps"
+  },
+  {
+    "id": "q4",
+    "question": "What acronym is used in the excerpt to refer to the governing structure of the community?",
+    "target_keyword": "PRA",
+    "ground_truth_claim": "PRA"
+  },
+  {
+    "id": "q5",
+    "question": "What role does the speaker claim to have at the end of the video?",
+    "target_keyword": "Editor",
+    "ground_truth_claim": "Editor"
+  }
+]

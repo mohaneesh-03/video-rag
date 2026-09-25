@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1",
+    "question": "What position does Demis Hassabis hold at Google DeepMind according to the excerpt?",
+    "target_keyword": "Demis Hassabis",
+    "ground_truth_claim": "He is the CEO of Google DeepMind."
+  },
+  {
+    "id": "q2",
+    "question": "Which tool is described as a linchpin for protein structure prediction in the excerpt?",
+    "target_keyword": "alpha fold",
+    "ground_truth_claim": "alpha fold"
+  },
+  {
+    "id": "q3",
+    "question": "According to the excerpt, where did the intelligence of Deep Blue reside?",
+    "target_keyword": "Deep Blue",
+    "ground_truth_claim": "In the minds of the chess grandmasters and the programmers."
+  },
+  {
+    "id": "q4",
+    "question": "What is the name of the AI watermarking system mentioned in the excerpt?",
+    "target_keyword": "SynthID",
+    "ground_truth_claim": "SynthID"
+  },
+  {
+    "id": "q5",
+    "question": "What is the name of the chip design referenced in the excerpt?",
+    "target_keyword": "Alpha chip",
+    "ground_truth_claim": "Alpha chip"
+  }
+]

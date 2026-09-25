@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1",
+    "question": "At which university was the speaker a PhD student about seven years ago?",
+    "target_keyword": "Stanford",
+    "ground_truth_claim": "Stanford"
+  },
+  {
+    "id": "q2",
+    "question": "What is the name of the chat mode of Microsoft Bing discussed in the excerpt?",
+    "target_keyword": "Sydney",
+    "ground_truth_claim": "Sydney"
+  },
+  {
+    "id": "q3",
+    "question": "Which neural network architecture is mentioned as being used in the 2014 sequence\u2011to\u2011sequence paper?",
+    "target_keyword": "LSTM",
+    "ground_truth_claim": "LSTM"
+  },
+  {
+    "id": "q4",
+    "question": "What is the name of the minimal transformer implementation the speaker worked on recently?",
+    "target_keyword": "nanoGPT",
+    "ground_truth_claim": "nanoGPT"
+  },
+  {
+    "id": "q5",
+    "question": "According to the excerpt, which model is described as a general purpose computer reconfigurable at runtime?",
+    "target_keyword": "GPT",
+    "ground_truth_claim": "GPT"
+  }
+]

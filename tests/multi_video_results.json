@@ -1,0 +1,165 @@
+{
+  "individual_results": [
+    {
+      "video_id": "video_1",
+      "title": "I Visited America\u2019s City With NO LAWS! (Slab City)",
+      "url": "https://www.youtube.com/watch?v=WBn-dXTrRkc",
+      "collection": "eval_video_1",
+      "audio_duration_sec": 4134.0,
+      "t_ingest_sec": 76.66,
+      "t_whisper_sec": 44.49,
+      "t_index_sec": 0.5,
+      "total_latency_sec": 121.65,
+      "model_rtf": 0.0108,
+      "model_speedup": 92.9,
+      "system_rtf": 0.0294,
+      "system_speedup": 34.0,
+      "hit_rate_pct": 80.0,
+      "mrr": 0.7,
+      "faithfulness_pct": 100.0,
+      "benchmark_cases": [
+        {
+          "question": "In which U.S. state is the random town described in the excerpt located?",
+          "target_keyword": "california",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which community does the person recommend for staying in the area?",
+          "target_keyword": "slab city",
+          "rank": 2,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "Which branch of the U.S. military originally built the settlement in 1942?",
+          "target_keyword": "marine corps",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What acronym is used in the excerpt to refer to the governing structure of the community?",
+          "target_keyword": "pra",
+          "rank": "Miss",
+          "reciprocal_rank": 0.0
+        },
+        {
+          "question": "What role does the speaker claim to have at the end of the video?",
+          "target_keyword": "editor",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "video_id": "video_2",
+      "title": "The Hardest Problem AI Ever Solved (Demis Hassabis)",
+      "url": "https://www.youtube.com/watch?v=C0gErQtnNFE",
+      "collection": "eval_video_2",
+      "audio_duration_sec": 3910.9,
+      "t_ingest_sec": 42.12,
+      "t_whisper_sec": 36.5,
+      "t_index_sec": 0.5,
+      "total_latency_sec": 79.12,
+      "model_rtf": 0.0093,
+      "model_speedup": 107.1,
+      "system_rtf": 0.0202,
+      "system_speedup": 49.4,
+      "hit_rate_pct": 100.0,
+      "mrr": 0.9,
+      "faithfulness_pct": 66.7,
+      "benchmark_cases": [
+        {
+          "question": "What position does Demis Hassabis hold at Google DeepMind according to the excerpt?",
+          "target_keyword": "demis hassabis",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which tool is described as a linchpin for protein structure prediction in the excerpt?",
+          "target_keyword": "alpha fold",
+          "rank": 2,
+          "reciprocal_rank": 0.5
+        },
+        {
+          "question": "According to the excerpt, where did the intelligence of Deep Blue reside?",
+          "target_keyword": "deep blue",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What is the name of the AI watermarking system mentioned in the excerpt?",
+          "target_keyword": "synthid",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What is the name of the chip design referenced in the excerpt?",
+          "target_keyword": "alpha chip",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "video_id": "video_3",
+      "title": "Andrej Karpathy 1-Hour Lecture on Modern AI / LLMs",
+      "url": "https://www.youtube.com/watch?v=EsQ_bmXKA4A",
+      "collection": "eval_video_3",
+      "audio_duration_sec": 4110.0,
+      "t_ingest_sec": 41.86,
+      "t_whisper_sec": 42.0,
+      "t_index_sec": 14.88,
+      "total_latency_sec": 98.74,
+      "model_rtf": 0.0102,
+      "model_speedup": 97.8,
+      "system_rtf": 0.024,
+      "system_speedup": 41.6,
+      "hit_rate_pct": 60.0,
+      "mrr": 0.6,
+      "faithfulness_pct": 100.0,
+      "benchmark_cases": [
+        {
+          "question": "At which university was the speaker a PhD student about seven years ago?",
+          "target_keyword": "stanford",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "What is the name of the chat mode of Microsoft Bing discussed in the excerpt?",
+          "target_keyword": "sydney",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "question": "Which neural network architecture is mentioned as being used in the 2014 sequence\u2011to\u2011sequence paper?",
+          "target_keyword": "lstm",
+          "rank": "Miss",
+          "reciprocal_rank": 0.0
+        },
+        {
+          "question": "What is the name of the minimal transformer implementation the speaker worked on recently?",
+          "target_keyword": "nanogpt",
+          "rank": "Miss",
+          "reciprocal_rank": 0.0
+        },
+        {
+          "question": "According to the excerpt, which model is described as a general purpose computer reconfigurable at runtime?",
+          "target_keyword": "gpt",
+          "rank": 1,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    }
+  ],
+  "aggregates": {
+    "num_videos": 3,
+    "total_audio_hours": 3.38,
+    "mean_model_rtf": 0.0101,
+    "mean_model_speedup": 99.3,
+    "mean_system_rtf": 0.0245,
+    "mean_system_speedup": 41.7,
+    "mean_hit_rate_pct": 80.0,
+    "mean_mrr": 0.733,
+    "mean_faithfulness_pct": 88.9
+  }
+}

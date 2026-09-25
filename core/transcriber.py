@@ -12,37 +12,46 @@ if not groq_api_key:
 
 groq_client = Groq(api_key=groq_api_key)
 
-def transcribe(file_path:str, translate:bool = False) -> str:
+import time
 
 
-    if translate == False:
-        with open(file_path, "rb") as file:
-            transcription = groq_client.audio.transcriptions.create(
-                file = file,
-                model = "whisper-large-v3",
-                response_format = "verbose_json",
-                language = "en"
-            )
+def transcribe(file_path: str, translate: bool = False) -> str:
+    for attempt in range(5):
+        try:
+            if not translate:
+                with open(file_path, "rb") as file:
+                    transcription = groq_client.audio.transcriptions.create(
+                        file=file,
+                        model="whisper-large-v3",
+                        response_format="verbose_json",
+                        language="en",
+                    )
+                    return transcription.text
+            else:
+                with open(file_path, "rb") as file:
+                    translation = groq_client.audio.translations.create(
+                        file=file,
+                        model="whisper-large-v3",
+                        response_format="json",
+                    )
+                    return translation.text
+        except Exception as e:
+            if attempt < 4:
+                wait_sec = (2 ** attempt) * 2
+                print(f"⚠️ Groq transcription attempt {attempt+1} failed: {e}. Retrying in {wait_sec}s...")
+                time.sleep(wait_sec)
+            else:
+                raise e
 
-            return transcription.text
-    else:
-        with open(file_path, "rb") as file:
 
-            translation = groq_client.audio.translations.create(
-                file = file,
-                model = "whisper-large-v3",
-                response_format = "json"
-            )
-
-            return translation.text
-    
-def transcribe_all(chunks: list, translate:bool = False) -> str:
+def transcribe_all(chunks: list, translate: bool = False) -> str:
     full_transcript = ""
 
-    for i,chunk in enumerate(chunks):
-        print(f"Transcribing {i+1}th chunk")
+    for i, chunk in enumerate(chunks):
+        print(f"Transcribing {i+1}th chunk...")
         text = transcribe(chunk, translate=translate)
         full_transcript += text + " "
+        time.sleep(1)  # small pause to respect rate limits
 
     print("Transcription Completed")
 

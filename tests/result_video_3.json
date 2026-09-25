@@ -1,0 +1,50 @@
+{
+  "video_id": "video_3",
+  "title": "Andrej Karpathy 1-Hour Lecture on Modern AI / LLMs",
+  "url": "https://www.youtube.com/watch?v=EsQ_bmXKA4A",
+  "collection": "eval_video_3",
+  "audio_duration_sec": 4110.0,
+  "t_ingest_sec": 41.86,
+  "t_whisper_sec": 42.0,
+  "t_index_sec": 14.88,
+  "total_latency_sec": 98.74,
+  "model_rtf": 0.0102,
+  "model_speedup": 97.8,
+  "system_rtf": 0.024,
+  "system_speedup": 41.6,
+  "hit_rate_pct": 60.0,
+  "mrr": 0.6,
+  "faithfulness_pct": 100.0,
+  "benchmark_cases": [
+    {
+      "question": "At which university was the speaker a PhD student about seven years ago?",
+      "target_keyword": "stanford",
+      "rank": 1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question": "What is the name of the chat mode of Microsoft Bing discussed in the excerpt?",
+      "target_keyword": "sydney",
+      "rank": 1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question": "Which neural network architecture is mentioned as being used in the 2014 sequence\u2011to\u2011sequence paper?",
+      "target_keyword": "lstm",
+      "rank": "Miss",
+      "reciprocal_rank": 0.0
+    },
+    {
+      "question": "What is the name of the minimal transformer implementation the speaker worked on recently?",
+      "target_keyword": "nanogpt",
+      "rank": "Miss",
+      "reciprocal_rank": 0.0
+    },
+    {
+      "question": "According to the excerpt, which model is described as a general purpose computer reconfigurable at runtime?",
+      "target_keyword": "gpt",
+      "rank": 1,
+      "reciprocal_rank": 1.0
+    }
+  ]
+}
