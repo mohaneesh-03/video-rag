@@ -185,7 +185,7 @@ with st.sidebar:
 
     video_url = st.text_input(
         "YouTube Video URL",
-        value="https://www.youtube.com/watch?v=4JKOGT8HH1Q",
+        value="",
         placeholder="https://www.youtube.com/watch?v=...",
         help="Paste any publicly accessible YouTube URL.",
     )
@@ -214,8 +214,11 @@ with st.sidebar:
 
 
 # ─── Pipeline Execution ──────────────────────────────────────────────────────
-if analyze_button and video_url.strip():
-    progress_status = st.status("Initiating video processing...", expanded=True)
+if analyze_button:
+    if not video_url.strip():
+        st.warning("⚠️ Please enter a YouTube video URL first.")
+    else:
+        progress_status = st.status("Initiating video processing...", expanded=True)
 
     try:
         # Step 1: Download & convert audio
